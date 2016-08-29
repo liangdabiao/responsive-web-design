@@ -155,7 +155,34 @@
                   }
                   
                   
+                  
+                  
+                  
+                  
+                    .clearfix:before, .clearfix:after{
+
+        content: "";
+        height: 0;
+        display: block;
+        clear: both;
+        visibility: hidden;
+    }
+
+    /*改进版*/
+          .clearfix:before,
+    .clearfix:after{
+        content:"";
+        display: table;
+    }
+    
+    .clearfix:after{
+        clear: both;
+    }
+                  
+                  
   五、BFC
+  
+        http://www.zhangxinxu.com/wordpress/?p=4588
   
       float
       overflow
@@ -164,4 +191,24 @@
       --------
       
       触发BFC效果
+      
+      
+      
+六、inline-block  产生的间隙
+
+        li里面有个换行符，产生空白间隙，
+        
+        
+        ul           font-size:0;      有副作用，有可能产生下边距
+        
+        </li>        闭合标签写到下面
+        
+        <li>          不闭合
+        
+        设置负边距     margin-left:-3px;    各浏览器可能不同
+        
+      
+      
+
+        
       
