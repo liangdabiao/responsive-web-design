@@ -1,0 +1,35 @@
+ 1rem=10px
+ 
+ 不是根据上面换算，，根据浏览器的默认值
+ 
+ 1rem=16px
+ 
+ @媒体查询级别非常高
+
+-----------------------------
+改成em也可以
+-----------------------------
+
+@media only screen and(max-width:80em){
+    
+    header .top ul li a{
+        padding:0 1rem;
+        }
+
+}
+
+
+@media only screen and(min-width:30.0625em) and (max-width:50em){
+
+}
+
+
+@media only screen and(max-width:30em){
+
+        header .top .tel,
+        header .top ul li:nth-child(3),
+        header .top ul li:nth-child(4){
+            display: none;
+        }
+
+}
