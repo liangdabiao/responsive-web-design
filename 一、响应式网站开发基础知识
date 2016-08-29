@@ -70,6 +70,31 @@
 
  <meta name="viewport"  content="width=device-width"/>
  
- 不 
+ 不指定属性   布局视口的宽度是厂商的默认值
+ 
+ 指定该属性   布局视口成为理想视口
+ 
+ 
+ 
+ 百度
+ 
+  <meta name="viewport"  content="width=device-width,
+  
+  minimum-scale=1.0,        ----------最小的缩放比例
+  
+  maximum-scal=1.0,         ----------最大的缩放比例
+  
+  user-scalable=no"/>       ----------禁用了用户缩放
+  
+  
+  用户默认缩放比例
+  
+  最大缩放比例
+  
+  最小缩放比例
+  
+  是否禁用用户缩放
+ 
+ 
 
   
