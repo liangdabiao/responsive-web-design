@@ -1,0 +1,167 @@
+
+一、  CSS  resets  vs Normalize.css
+
+    去除浏览器之间的差异，统一这些差异而存在，让浏览器让统一的各个样式。
+    
+    Normalize.css 的优点：
+    
+        1、保护了有价值的默认样式。
+        
+        2、修复了常见的桌面端和移动的显示BUG。
+    
+二、
+
+
+      px                一个px相当于1个像素
+      
+      
+      em                相对的长度单位     
+                  
+                        参考物： 相对参考物为父元素的font-size
+                        
+                                 em具有继承的特点
+                                 
+                                 当没有设置font-size时，浏览器会有一个默认的em设置：
+                                 
+                                 1em=16px
+                                 
+                                 
+                        容易混乱
+                        
+                        
+      rem               相对参照物的根元素html,相于参照固定不变所以比较好计算
+      
+                        当没有设置font-size时，浏览器会有一个默认的rem
+                        
+                        设置：1rem=16px，这点与em是一致的
+                        
+                        
+                        
+                        
+     font-size:62.5%            1rem=10px       (10/16*100%)
+     
+     font-size:100%             1rem=16px
+     
+     
+     
+三、
+
+
+         /*页面样式*/
+        /*基本默认值*/
+
+        html{
+            font-size: 62.5%;
+            color: #222;
+        }
+        /*设置选中文字的效果*/
+        ::selection{
+            background: #b3d4fc;
+            text-shadow: none;
+        }
+
+        ul{
+            margin: 0;
+            padding: 0;
+        }
+
+        li{
+            list-style: none;
+        }
+
+        /*工具样式*/
+
+        /*感觉没啥用*/
+
+        /*直接在父元素中居中显示*/
+
+
+        .center-block{
+            display: block;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        .pull-right{
+            float: right;!important;
+        }
+
+        .pull-left{
+            float: left;!important;
+        }
+
+        .text-right{
+            text-align: right;!important;
+        }
+
+        .text-left{
+            text-align:left;!important;
+        }
+
+        .text-center{
+            text-align: center;!important;
+        }
+
+        /*隐藏文本*/
+        .text-hide{
+            font: 0/0 a;
+            color: transparent;
+            text-shadow: none;
+            background-color: transparent;
+            border: 0;
+        }
+
+
+
+四、清除浮动的方法
+
+       子元素浮动，导致父元素高度塌陷问题
+       
+  一、在文档的最后添加一个空的标签  
+          
+          <div style="clear:both"></div>
+          
+          添加了一个无意义的空标签，违背了结构和表现分离的WEB标准的精髓，太多了维护麻烦
+          
+          
+  二、给浮动元素父元素 container            添加overflow:auto;
+  
+  三、让父元素本身也浮动
+  
+            给浮动元素的父元素添加浮动,会影响整个页面的布局，不推荐使用
+            
+            
+  四、使用:after 伪元素
+  
+      .clearfix:after{
+              
+              content:".";
+              
+              display:block;
+              
+              height:0;
+              
+              clear:both;
+              
+              visibility:hidden;
+              
+              }
+              
+              //为了IE6,7设置,
+              .clearfix{
+              
+                  zoom:1
+                  
+                  }
+                  
+                  
+  五、BFC
+  
+      float
+      overflow
+      display    table-cell,table-caption,inline-block;
+      position:fixed,absolute;
+      --------
+      
+      触发BFC效果
+      
